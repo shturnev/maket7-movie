@@ -1,0 +1,583 @@
+@charset "utf-8";
+@import "_helpers.scss", "fonts", "settings", "loaders-on-scss-master/loaders";
+
+
+
+html, body{
+  margin: 0;
+  padding: 0;
+  font-size: 1px;
+  height: 100%;
+  min-height: 100%;
+  background: $silverLight;
+}
+
+header{
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+
+  .wr{
+    position: relative;
+    flex-wrap: nowrap;
+
+
+    .logo{
+      display:block;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 24px 0;
+
+      font-family: 'HelveticaNeueCyr-Black';
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 900;
+      text-align: left;
+
+      span{
+        font-family: 'HelveticaNeueCyr-Thin';
+        color: #ffffff;
+        font-weight: 100;
+        text-align: left;
+      }
+
+
+    }
+    .for-buttons{
+      padding: 24px 0;
+
+      .btns{
+        @media (max-width: 40em) {
+          padding: 20px;
+          background: $silverDark;
+
+          a{
+            display: block;
+            padding: 5px;
+            margin: 0 0 10px 0;
+
+            &:hover, &.active{
+              color: $blue;
+              background:none;
+            }
+          }
+
+        }
+      }
+
+      a{
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+      .search{
+        color: white;
+
+        &:hover{
+          color: $blue;
+        }
+
+        i{
+          font-size: 20px;
+        }
+      }
+      .sign-in{
+        display: inline-block;
+        font-family: 'HelveticaNeueCyr-Roman';
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: right;
+        border-radius: 3px;
+        padding: 5px 20px;
+        vertical-align: middle;
+
+        &:hover, &.active{
+          background-color:  $blue;
+        }
+      }
+      .sign-up{
+        @extend .sign-in;
+        margin-right: 15px;
+      }
+
+    }
+    [for="open-header-btns"]{
+      color: white;
+      padding-right: 20px;
+
+    }
+    #open-header-btns:checked+*{
+      display:block !important;
+    }
+
+  }
+  &:before{
+    content: '';
+    display:block;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+  }
+}
+ul.slider{
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: white;
+
+  &:before{
+    content: '';
+    display:block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+  }
+
+
+  li.slideItem{
+    position: relative;
+    background: no-repeat center / cover;
+
+    &>.wr{
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding-bottom: 33px;
+
+      .title{
+        font-family: "HelveticaNeueCyr-Bold";
+        color: #ffffff;
+        font-size: 30px; /* Приближение из-за подстановки шрифтов */
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .genre{
+        span{
+          font-family: 'HelveticaNeueCyr-Thin';
+          color: #ffffff;
+          font-size: 12px;
+          font-weight: 400;
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+      .ratings{
+        margin-top: 12px;
+        .stars{
+          display: inline-block;
+          vertical-align: middle;
+
+          i{
+            font-size: 20px;
+            color: $blue;
+            vertical-align: middle;
+          }
+        }
+        .rating{
+          display: inline-block;
+          vertical-align: middle;
+          border: 1px solid $blue;
+          border-radius: 3px;
+          font-family: 'HelveticaNeueCyr-Roman';
+          color:  #ffffff;
+          font-size: 10px;
+          font-weight: 500;
+          text-align: center;
+          padding: 0 5px;
+        }
+
+      }
+      .right-col{
+        a{
+          color: white;
+          
+          &:hover{
+            color: $blue;
+          }
+        }
+        a.btn{
+          display: inline-block;
+          border: 1px solid white;
+          border-radius: 3px;
+
+          font-family: 'HelveticaNeueCyr-Roman';
+          color: #ffffff;
+          font-size: 14px;
+          font-weight: 100;
+          padding: 4px 15px;
+          margin-right: 10px;
+          
+          &:hover, &.active{
+            background-color:  $blue;
+            border-color: $blue;
+          }
+
+        }
+        .more{
+          margin-left: 10px;
+          i{
+            font-size: 26px;
+            line-height: 0;
+            vertical-align: middle;
+          }
+        }
+
+        @media (max-width: 40em) {
+          a{
+            display: block;
+            margin-right: 0 !important;
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      @media (max-width: 40em) {
+        position: relative;
+      }
+
+    }
+  }
+
+}
+#content{
+  max-width: 2000px;
+  margin: 35px auto 0 auto;
+  font-size: 14px;
+  position: relative;
+
+  .category{
+
+    a{
+      display: inline-block;
+      font-family: 'HelveticaNeueCyr-Roman';
+      font-size: 14px; /* Приближение из-за подстановки шрифтов */
+      margin-right: 20px;
+      border-bottom: 1px solid transparent;
+      
+      &:hover, &.active{
+        border-bottom: 1px solid $blue;
+      }
+
+      &.plus{
+        i{
+          vertical-align: middle;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .change-grid{
+    a{
+      display: inline-block;
+      color: $silver;
+
+      &:hover, &.active{
+        color: $blue;
+      }
+
+      i{
+        font-size: 20px;
+      }
+    }
+  }
+  .film-list{
+    position: relative;
+    margin-top: 15px;
+
+
+    .film-item{
+      position: relative;
+      background: white;
+      background-clip: content-box;
+      margin-bottom: 25px;
+      //height: 260px;
+      
+      &:hover, &.active{
+        .full-info{
+          display: block;
+        }
+      }
+
+      .poster{
+        background: no-repeat 0 0 / cover;
+      }
+      .short-info{
+        flex-wrap: nowrap;
+        padding: 20px;
+
+        .title{
+          display: inline-block;
+          font-family: 'HelveticaNeueCyr-Bold';
+          color: $grayDark;
+          font-size: 11px;
+          text-transform: uppercase;
+          max-width: 115px;
+          overflow-x: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          
+          &:hover, &.active{
+            color: $blue;
+          }
+
+        }
+        .genre{
+          font-family: 'HelveticaNeueCyr-Roman';
+          color: $blueLight;
+          font-size: 11px;
+          margin-top: 5px;
+        }
+        .rate{
+          border-radius: 3px;
+          border: 1px solid $blue;
+          font-family: 'HelveticaNeueCyr-Thin';
+          color: $blue;
+          font-size: 10px; /* Приближение из-за подстановки шрифтов */
+          padding: 0 3px;
+        }
+      }
+      .full-info{
+        display: none;
+        background: no-repeat center / cover;
+        background-clip: content-box;
+        padding:0 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &:before{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(black, 0.45);
+          background-clip: content-box;
+          padding: 0 20px;
+          box-sizing: border-box;
+
+        }
+
+        .info{
+          position: relative;
+          padding: 20px;
+
+          .close{
+            color: white;
+            
+            &:hover, &.active{
+              color: $blue;
+            }
+
+            i{
+              font-size: 20px;
+              vertical-align: middle;
+            }
+          }
+          .link{
+            font-family: 'HelveticaNeueCyr-Roman';
+            font-size: 14px;
+            color: white;
+            vertical-align: middle;
+
+            i{
+              vertical-align: middle;
+              font-size: 20px;
+            }
+
+            &:hover, &.active{
+              color: $blue;
+            }
+          }
+
+          .flex{
+            display: flex;
+            justify-content: space-between;
+
+          }
+          .title{
+            font-family: 'HelveticaNeueCyr-Bold';
+            color: #ffffff;
+            font-size: 12px; /* Приближение из-за подстановки шрифтов */
+            text-transform: uppercase;
+            margin-top: 10px;
+          }
+          .categ{
+            font-family: 'HelveticaNeueCyr-Roman';
+            color: $blueLight;
+            font-size: 10px;
+          }
+          .rate{
+            border-radius: 3px;
+            border: 1px solid $blue;
+            font-family: 'HelveticaNeueCyr-Thin';
+            color: $blue;
+            font-size: 10px;
+            padding: 0 3px;
+            align-self: baseline;
+            margin-top: 10px;
+
+          }
+
+          .descr{
+            font-family: 'HelveticaNeueCyr-Thin';
+            color: white;
+            font-size: 12px; /* Приближение из-за подстановки шрифтов */
+            max-height: 107px;
+            overflow: hidden;
+            margin-top: 10px;
+          }
+
+          .for-btn{
+            margin-top: 20px;
+
+            a{
+              display: inline-block;
+              border-radius: 3px;
+              background-color: $blue  ;
+
+              font-family: 'HelveticaNeueCyr-Thin';
+              color: #ffffff;
+              font-size: 13px; /* Приближение из-за подстановки шрифтов */
+              padding: 6px 10px;
+
+              &:hover, &.active{
+                background-color:  $blueLight;
+              }
+            }
+          }
+
+        }
+
+
+      }
+    }
+
+
+  }
+  .subscribe{
+    position: relative;
+    background: no-repeat center / cover;
+    background-clip: content-box;
+    padding: 0 20px;
+    box-sizing: border-box;
+    max-width: 2000px;
+    margin: 0 auto;
+    
+
+    .wr{
+      position: relative;
+      padding: 70px 30px;
+
+      &:before{
+        content: '';
+        display:block;
+        box-sizing: border-box;
+        position: absolute;
+        background: rgba(black, 0.7);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+      }
+      .title{
+        position: relative;
+        font-family: 'HelveticaNeueCyr-Light';
+        color: white;
+        font-size: 28px; /* Приближение из-за подстановки шрифтов */
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .btn{
+        position: relative;
+        font-family: 'HelveticaNeueCyr-Thin';
+        color: white;
+        font-size: 14px;
+        display:inline-block;
+        padding: 6px 15px;
+        background: $blue;
+        border-radius: 3px;
+        margin-top: 15px;
+
+        &:hover, &.active{
+          background: $blueLight;
+        }
+      }
+    }
+
+  }
+  .loading{
+    position: relative;
+    text-align: center;
+    padding: 40px 0;
+
+    i{
+      display: inline-block;
+      @include loader10($size: 10px, $color: $blue);
+
+    }
+    span{
+      display:block;
+      font-family: 'HelveticaNeueCyr-Roman';
+      color: rgba(36, 43, 45, 0.4);
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+  }
+}
+footer{
+  font-size: 14px;
+  background: white;
+  padding: 35px 0;
+
+  nav{
+    a{
+      display: inline-block;
+      font-family: 'HelveticaNeueCyr-Roman';
+      color: $silverDark;
+      font-size: 12px; /* Приближение из-за подстановки шрифтов */
+      margin-right: 10px;
+
+      &:hover, &.active{
+       color: $blue;
+      }
+    }
+  }
+  .logo{
+    font-family: 'HelveticaNeueCyr-Black';
+    color: $blue;
+    font-size: 25px; /* Приближение из-за подстановки шрифтов */
+    text-transform: uppercase;
+  }
+  .copy{
+    margin-top: 20px;
+    font-family: 'HelveticaNeueCyr-Roman';
+    color: $silverDark;
+    font-size: 10px; /* Приближение из-за подстановки шрифтов */
+
+  }
+  .socials{
+    a{
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 19px;
+      color: $silverDark;
+
+      &:hover, &.active{
+        color: $blue;
+      }
+    }
+  }
+
+}

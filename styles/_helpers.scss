@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+
+.is-16-9{
+  padding-top:  percentage(9 / 16);
+}
+.is-2-1{
+  padding-top: percentage(1 / 2) ;
+}
+.is-4-3{
+  padding-top: percentage(3 / 4);
+}
+
+.light{
+  font-family: 'HelveticaNeueCyr-Thin';
+}
