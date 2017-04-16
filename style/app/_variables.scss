@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+
+/*-----------------------------------
+цвета
+-----------------------------------*/
+$blue: #0aaee4;
+$gray_light: #e0e1e2;
+$gray: darken($gray_light, 15%);
+$gray_dark: #242b2d;
+
+
+.light{
+  font-family: 'HelveticaNeueCyr-Thin';
+  text-transform: uppercase;
+}
+
+.is-16-9{
+  padding-top: percentage(9 / 16);
+}
+
+.is-2-1{
+  padding-top: percentage(1 / 2);
+}
+
+
+$classes: (
+  mt: margin-top,
+  mb: margin-bottom,
+  mr: margin-right,
+  ml: margin-left,
+);
+
+$i: 5; $s: 5; $max: 100;
+@while $i <= $max{
+
+  @each $key, $val in $classes{
+    .#{$key}#{$i}{#{$val}:$i + px;}
+  }
+
+  $i: $i + $s;
+
+}
