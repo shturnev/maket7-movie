@@ -1,4 +1,5 @@
 $('ul.slider').slick({
+    autoplay: true,
     infinite: true,
     arrows: false,
     dots: true,
